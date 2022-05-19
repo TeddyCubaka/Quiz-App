@@ -1,4 +1,175 @@
-html, body {
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Fraunces:ital,wght@0,100;0,200;0,300;0,400;0,500;0,700;0,800;0,900;1,300;1,400;1,600;1,700;1,800;1,900&family=Inter:wght@200;300;400;500&display=swap');
+
+body {
   height: 100%;
   width: 100%;
+  background-image: linear-gradient(100deg, #f4ffb5 0, #deffb8 12.5%, #c8ffba 25%, #b2ffba 37.5%, #9df2b9 50%, #8ae3b7 62.5%, #7bd6b5 75%, #6fcbb4 87.5%, #65c2b3 100%);
+  font-family: inter;
+  font-weight: 200;
+}
+
+
+@keyframes progres-barre{
+  0%{
+    width: 100%;
+    background-color: skyblue;
+  }
+  30%
+  {
+    background-color: violet;
+  }
+  100%{
+    width: 0%;
+    background-color: red;
+  }
+}
+@keyframes transition {
+  0%{
+    margin-left: 0%;
+    background-color: pink;
+  }
+  50%{
+    margin-left: 50%;
+  }
+  100%{
+    margin-left: 27%;
+  }
+}
+
+
+
+
+
+
+header
+{
+  width: 571px;
+  height: 500px;
+  background-color: white;
+  margin: auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px 20px;
+  animation: transition 3s;
+}
+header > *
+{
+  margin: 0px 60px;
+}
+header > div
+{
+  font-size: large;
+  text-align: left;
+}
+header > div > input
+{
+  width: 500px;
+  height: 30px;
+  margin: 10px 0px;
+  border: 0.5px solid rgba(0, 100, 100, 10%);
+}
+.button
+{
+  width: 200px;
+  height: 40px;
+  background-color: green;
+  font-family: inter;
+  border: none;
+  color: white;
+  font-size: 25px;
+  box-shadow: 2px 1px 4px rgb(14, 12, 12);
+  margin: 20px;
+}
+
+
+/* ici nous gérons le questionnaires */
+
+
+.questions{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+form > div
+{
+  width: 571px;
+  height: 600px;
+  background-color: white;
+  margin: auto;
+  /* margin-top:39px ; */
+  text-align: center;
+  padding: 50px 30px;
+  display: none;
+}
+.Défilement {
+  display: block;
+  border: 1px solid skyblue;
+  width: 490px;
+  height: 5px;
+  border-radius: 4px;
+}
+.barre
+{
+  height: 5px;
+  animation: progres-barre 60s;
+}
+.checkBox{
+  border: 1px solid skyblue;
+  width: 90%;
+  margin: 10px auto;
+  height: 21px;
+  text-align: left;
+  padding: 1em;
+  font-size: large;
+}
+.checkBox > input{
+  /* width: 30px; */
+  height: 20px;
+}
+.red_button{
+  background-color: rgb(226, 55, 55);
+}
+.indicateur
+{
+  display: flex;
+  justify-content: space-between;
+}
+.hide{
+  display: none;
+}
+
+
+
+/* ce qui suis gerera l'affichage des résultats */
+
+
+
+.result{
+  width: 571px;
+  height: 600px;
+  background-color: white;
+  margin: auto;
+  margin-top:39px ;
+  text-align: center;
+  padding: 50px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 15%;
+  padding-bottom: 15%;
+}
+.result > *{
+  margin: 20px auto;
+  font-weight: 600;
+  font-size: large;
+}
+.result > img{
+  width: 300px;
+}
+.result > button{
+  
 }
