@@ -5,12 +5,87 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>replit</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link href="style.css" rel="stylesheet" type="text/css"/>
 </head>
-
 <body>
-  Hello world
+
+
+  <form action="get">
+
+
+
+    <header>
+      <h1>JavaSCript Quiz</h1>
+      <p>Évaluez vos connaissances en JavaScript en répondant aux questions que nous avons spécialement sélectionnées pour vous.
+C'est fun et c'est gratuit. </p>
+      <div>
+        <label for="name">Name</label><br>
+        <input type="name" name="name" id="name">
+      </div>
+      <div>
+        <label for="email">Gmail</label><br>
+        <input type="email" name="email" id="email">
+      </div>
+      <input type="button" name="begginBtn" id="begginBtn" class="button" value="Beggin">
+    </header>
+
+
+
+
+
+
+    <div class="questions hide">
+
+      <h1></h1>
+
+      <div>
+        <div class="indicateur">
+          <div></div>
+          <div id="timer"></div>
+        </div>
+        <div class="Défilement">
+          <div class="barre"></div>
+        </div>
+      </div>
+
+      <div class="checkBox">
+        <input type="radio" name="questions" id="firstQuestion" value="0"  class="checkbox">
+        <span class="choix"></span>
+      </div>
+      <div class="checkBox">
+        <input type="radio" name="questions" id="secondQuestion" value="0" class="checkbox">
+        <span class="choix"></span>
+      </div>
+      <div class="checkBox">
+        <input type="radio" name="questions" id="thirdQuestion" value="true" class="checkbox">
+        <span class="choix"></span>
+      </div>
+      <div class="checkBox">
+        <input type="radio" name="questions" id="fourthQuestion" value="0" class="checkbox">
+        <span class="choix"></span>
+      </div>
+      <div class="btns">
+        <input type="button" id="suivant" name="suivant" value="Suivant" class="button">
+        <input type="button" id="quitter" name="quitter" value="Quitter"  class="button red_button">
+      </div>
+    </div>
+  </form>
+
+
+<!-- ces codes qui suivent concernent la page des résultats -->
+
+
+
+    <div class="result hide">
+      <div class="underDivResult" id="userName">userName</div>
+      <div id="gmail" class="underDivResult">@mail.com</div>
+      <img src="cocheVert.png" alt="conche vert, cela veut dire que vous aviez réussit" class="underDivResult" id="iconCosh">
+      <div class="underDivResult" id="points">15/15</div>
+      <button class="underDivResult button" id="home">Home</button>
+    </div>
+
+
   <script src="script.js"></script>
 </body>
 
-</html>
+</html>             
