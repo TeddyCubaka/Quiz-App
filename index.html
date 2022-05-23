@@ -10,72 +10,74 @@
 <body>
 
 
-  <form action="get">
+  <form>
 
 
 
-    <header>
-      <h1>JavaSCript Quiz</h1>
+    <header class="" id="header">
+      <h3>JavaSCript Quiz</h3>
       <p>Évaluez vos connaissances en JavaScript en répondant aux questions que nous avons spécialement sélectionnées pour vous.
 C'est fun et c'est gratuit. </p>
       <div>
         <label for="name">Name</label><br>
-        <input type="name" name="name" id="name">
+        <input type="text" name="name" id="name">
+        <sub class="red subName hide">veuillez renseigner votre nom</sub>
       </div>
       <div>
         <label for="email">Gmail</label><br>
         <input type="email" name="email" id="email">
+        <sub class="red subMail hide">veuillez renseigner votre email</sub>
       </div>
-      <input type="button" name="begginBtn" id="begginBtn" class="button" value="Beggin">
+      <input type="button" name="begginBtn" id="begginBtn" class="button" value="Begin">
     </header>
+    
+    
+    
+    
 
-
-
-
-
-
-    <div class="questions hide">
-
-      <h1></h1>
-
+    
+    <div class="questions hide" id="questions">
+      
+      <h3 class="h3">Question</h3>
+      
       <div>
         <div class="indicateur">
-          <div></div>
+          <div>question 1/15</div>
           <div id="timer"></div>
         </div>
         <div class="Défilement">
           <div class="barre"></div>
         </div>
       </div>
-
+      
       <div class="checkBox">
-        <input type="radio" name="questions" id="firstQuestion" value="0"  class="checkbox">
+        <input type="radio" name="questions" id="firstQuestion" checked="false"  class="checkbox">
         <span class="choix"></span>
       </div>
       <div class="checkBox">
-        <input type="radio" name="questions" id="secondQuestion" value="0" class="checkbox">
+        <input type="radio" name="questions" id="secondQuestion" checked="false" class="checkbox">
         <span class="choix"></span>
       </div>
       <div class="checkBox">
-        <input type="radio" name="questions" id="thirdQuestion" value="true" class="checkbox">
+        <input type="radio" name="questions" id="thirdQuestion" checked="false" class="checkbox">
         <span class="choix"></span>
       </div>
       <div class="checkBox">
-        <input type="radio" name="questions" id="fourthQuestion" value="0" class="checkbox">
+        <input type="radio" name="questions" id="fourthQuestion" checked="false" class="checkbox">
         <span class="choix"></span>
       </div>
       <div class="btns">
-        <input type="button" id="suivant" name="suivant" value="Suivant" class="button">
         <input type="button" id="quitter" name="quitter" value="Quitter"  class="button red_button">
+        <input type="button" id="suivant" name="suivant" value="Suivant" class="button">
       </div>
     </div>
+    
+    
   </form>
+    <!-- ces codes qui suivent concernent la page des résultats -->
 
-
-<!-- ces codes qui suivent concernent la page des résultats -->
-
-
-
+    
+    
     <div class="result hide">
       <div class="underDivResult" id="userName">userName</div>
       <div id="gmail" class="underDivResult">@mail.com</div>
@@ -83,9 +85,9 @@ C'est fun et c'est gratuit. </p>
       <div class="underDivResult" id="points">15/15</div>
       <button class="underDivResult button" id="home">Home</button>
     </div>
+    
+    
+    <script src="script.js"></script>
+  </body>
 
-
-  <script src="script.js"></script>
-</body>
-
-</html>             
+  </html>
