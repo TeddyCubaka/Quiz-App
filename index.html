@@ -10,7 +10,7 @@
 <body>
 
 
-  <form>
+  <form class="form">
 
 
 
@@ -20,21 +20,17 @@
 C'est fun et c'est gratuit. </p>
       <div>
         <label for="name">Name</label><br>
-        <input type="text" name="name" id="name">
+        <input type="text" name="name" id="name" required>
         <sub class="red subName hide">veuillez renseigner votre nom</sub>
       </div>
       <div>
         <label for="email">Gmail</label><br>
-        <input type="email" name="email" id="email">
+        <input type="email" name="email" id="email" required>
         <sub class="red subMail hide">veuillez renseigner votre email</sub>
       </div>
       <input type="button" name="begginBtn" id="begginBtn" class="button" value="Begin">
     </header>
     
-    
-    
-    
-
     
     <div class="questions hide" id="questions">
       
@@ -43,7 +39,7 @@ C'est fun et c'est gratuit. </p>
       <div>
         <div class="indicateur">
           <div>question 1/15</div>
-          <div id="timer"></div>
+          <div id="timer" class="timer"></div>
         </div>
         <div class="Défilement">
           <div class="barre"></div>
@@ -72,6 +68,7 @@ C'est fun et c'est gratuit. </p>
       </div>
     </div>
     
+    <button id="click">click</button>
     
   </form>
     <!-- ces codes qui suivent concernent la page des résultats -->
@@ -88,6 +85,8 @@ C'est fun et c'est gratuit. </p>
     
     
     <script src="script.js"></script>
+    <!-- <script src="exit.js"></script>
+    <script src="test.js"></script> -->
   </body>
 
   </html>
