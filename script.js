@@ -32,7 +32,7 @@ function war (){
   let fourWA = [];
   let y = 0;
   let a = 0;
-  for (let x = 0; x < 3; x++) {
+  for (let x = 0; x < 4; x++) {
     y = Math.floor(Math.random() * wrongAnswers.length);
     a = wrongAnswers[y];
     fourWA.push(a);
@@ -53,6 +53,9 @@ function car (){
   }
   return oneCA;
 }
+
+
+
 
 // les éléments de la première page.
 let nom = document.querySelector("#name");
@@ -75,38 +78,26 @@ let userResult = document.querySelector("#points");
 let finalButton = document.querySelector("#home");
 let divResult = document.querySelector(".result");
 
-// stockons les questions et les répponses dans un objet.
-let ke = [];
-let keys = {};
-
-
-for (let i = 0; i < tabQuestions.length; i++){
-    keys.question = tabQuestions[i];
-    keys.vrai = corrAnswers[i];
-    keys.anwers = wrongAnswers;
-    ke.push(keys);
-}
-
 
 
 // clonons la div des questions
 
 let objetOfQuestions = [];
 let clone;
-for (let i = 0; i < 4; i++) {
+for (let i = 0; i < 15; i++) {
     clone = questions.cloneNode(true);
-    clone.id = "questions" + i;   
+    clone.id = "questions" + i;  
     objetOfQuestions.push(clone);
 }
 
 
+                      /*
 
-// construisons nos questionnaires.
+                      construisons nos questionnaires.
+
+                      */
 
 
-// ceci va avec le minuteur.
-const initialMinutes = 1;
-let time = initialMinutes * 60;
 
 let thePage = [];
 
@@ -116,48 +107,43 @@ function addQuestion (){
     // créons des variables pour stocker nos questions
     let rightAnswers = car ();
     let propositionAnswers = war ();
-    propositionAnswers.push(rightAnswers[0]);
+
     let page = objetOfQuestions[i];
-    page.children[0].textContent = ke[i].question;
-    // le minuteure.
-    setInterval(function timing () {
-      let timerObject =  page.children[1].children[0].children[1];
-      let minutes = parseInt(time / 60, 10);
-      let secondes = parseInt(time % 60, 10);
-      
-      minutes = minutes < 10 ? "0" + minutes : minutes;
-      secondes = secondes < 10 ? "0" + secondes : secondes;
-      
-      timerObject.innerText = `${minutes}:${secondes}`
-      time = time <= 0 ? 0 : time - 1
-  }, 1000);
+    page.children[0].textContent = rightAnswers[1];
 
   page.children[2].children[1].textContent = propositionAnswers[0];
   page.children[3].children[1].textContent = propositionAnswers[1];
-  page.children[4].children[1].textContent = propositionAnswers[2];
-  page.children[5].children[1].textContent = rightAnswers[0];
-
-  console.log(page.children[3].children[1].textContent);
+  page.children[4].children[1].textContent = rightAnswers[0];
+  page.children[5].children[1].textContent = propositionAnswers[3];
+  
   thePage.push(page);
-  }
-  return thePage;
+}
+return thePage;
 
 }
 
 // créons une variable qui va stocker le return de notre fonction addQuestion.
+
 let ourStock = addQuestion ();
+
+// ce code affichera un "Terminer" à la place de "suivant" au dernier bouton.
+let last = ourStock[14].children[6].children[1];
+last.value = "Terminer";
+
 // créons maintenant une fonction qui va afficher page par page de notre ourStock.
 
-// Avant ça, cette boucle va sélectionner les boutons radios de chaque questions.
-
 function nexter (){
-  let radios = [];
   let count  = 0; 
+
+  // Avant ça, cette boucle va sélectionner les boutons radios de chaque questions.
+
   for (let i = 0; i < ourStock.length; i++){
+    let radios = [];
     let sheet = ourStock[i];
     let next = sheet.children[6].children[1];
-    header.parentNode.appendChild(ourStock[i]);
-  // sélectionnons les buttons radio.
+    let exiteButton = sheet.children[6].children[0];
+
+    // sélectionnons les buttons radio.
     let radio = sheet.children[2].children[0];
     let radio2 = sheet.children[3].children[0];
     let radio3 = sheet.children[4].children[0];
@@ -166,24 +152,110 @@ function nexter (){
     radios.push(radio2);
     radios.push(radio3);
     radios.push(radio4);
-    
-    next.classList.add("opacity");
-    for (let rad of radios) {
-      rad.addEventListener("change", function (){
-        next.classList.remove("opacity");
-        next.addEventListener("click", function (){
-          if ( i < 3){
+
+    // ce code va gérer le compteur des questions.
+
+    let compteur = sheet.children[1].children[0].children[0];
+    let a = i + 1;
+    compteur.innerText = "Question" + " " + a + "/15";
+
+
+              // le minuteure.
+
+        // ceci va avec le minuteur.
+    let newTimer = sheet.children[1].children[0].children[1];
+    let t = 60;
+    let  = setInterval(function timer () {
+      while (sheet.classList.contains("hide") == false) {
+        t -= 1;
+        newTimer.innerHTML = t;
+        if (t == -1) {
+          while (i < ourStock.length-1){
+            newTimer.innerHTML = "0";
             sheet.classList.add("hide");
             ourStock[i + 1].classList.remove("hide");
-          }else if (i == 3){
+            count = count;
+            if (radios.children.checked == true){count++}
+            break;
+          }
+          if (i == ourStock.length-1){
             sheet.classList.add("hide");
             divResult.classList.remove("hide");
+            
+            // ceci affechera le resultat du joueur.
+
+            userName.innerText = nom.value;
+            userMail.innerText = mail.value;
+            userResult.innerText = count + "/15";
+            if (count < 8){
+                userMark.src = "cocheRouge.png";
+            }else{
+                userMark.src = "cocheVerte.png";
+            }
+            finalButton.onclick  = function(){window.location.reload();}
           }
+        }
+        break;
+      }
+    }, 1000);
     
-        })
+
+    next.classList.add("opacity");
+    for (let rad of radios) {
+      rad.addEventListener("change", function (e){
+        next.classList.remove("opacity");
+        if (rad == radio3){count++}
+        let index = radios.indexOf(rad) + 2;
+        sheet.children[index].style = "border: 1px solid green";
+        next.addEventListener("click", function (){
+
+          if ( i < 14){
+          sheet.classList.add("hide");
+          ourStock[i + 1].classList.remove("hide");
+          
+          }else if (i == 14){
+            sheet.classList.add("hide");
+            divResult.classList.remove("hide");
+            
+            // ceci affechera le resultat du joueur.
+
+            userName.innerText = nom.value;
+            userMail.innerText = mail.value;
+            userResult.innerText = count + "/15";
+            if (count < 8){
+                userMark.src = "cocheRouge.png";
+            }else{
+                userMark.src = "cocheVerte.png";
+            }
+            finalButton.onclick  = function(){window.location.reload();}
+          
+          }
+          
+              })
         // fin de l'event pour passer de page en page.
+        })
+      }
+      exiteButton.addEventListener("click", function (){
+        sheet.classList.add("hide");
+        divResult.classList.remove("hide");
+        
+        // ceci affechera le resultat du joueur.
+
+        userName.innerText = nom.value;
+        userMail.innerText = mail.value;
+        userResult.innerText = count + "/15";
+        if (count < 8){
+            userMark.src = "cocheRouge.png";
+        }else{
+            userMark.src = "cocheVerte.png";
+        }
+        finalButton.onclick  = function(){window.location.reload();}
       })
-    }
+
+
+
+    header.parentNode.appendChild(ourStock[i]);
+
 
   }
 }
@@ -191,18 +263,19 @@ function nexter (){
 // vérifions si les cases du formulaire de la première page sont vides ou pas.
 
 beginBtn.addEventListener("click", function (){
-  if (nom.value == "" && mail.value == "")
+  if (nom.value == "" && nom.value.length <= 1)
   {
     nom.classList.add("erreur");
     subName.classList.remove("hide");
+  }else if (mail.value == ""){
     mail.classList.add("erreur");
     subMail.classList.remove("hide");
-    return false;
   }else{
     header.classList.add("hide");
     header.parentNode.appendChild(ourStock[0]);
     ourStock[0].classList.remove("hide");
 
     nexter ();
+
   }
 })
