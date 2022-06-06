@@ -262,3 +262,76 @@ h3
 {
   opacity: 0.3;
 }
+
+@media (max-width: 730px){
+
+
+body {
+    height: 200%;
+    width: 100%;
+    background-image: linear-gradient(100deg, #f4ffb5 0, #deffb8 12.5%, #c8ffba 25%, #b2ffba 37.5%, #9df2b9 50%, #8ae3b7 62.5%, #7bd6b5 75%, #6fcbb4 87.5%, #65c2b3 100%);
+    background-position: center center;
+    background-size: cover;
+    font-family: inter;
+    font-weight: 200;
+    }
+
+
+header
+{
+    width: 400px;
+    height: 500px;
+    animation: none;
+}
+header > *
+{
+    margin: 0px auto;
+}
+header > div
+{
+    font-size: large;
+    text-align: left;
+}
+header > div > input
+{
+    width: 380px;
+    height: 30px;
+    margin: 10px 0px;
+    border: 0.5px solid rgba(0, 100, 100, 10%);
+}
+.button
+{
+    width: 100px;
+    height: 49px;
+}
+
+
+/* ici nous gérons le questionnaires */
+
+
+.questions{
+    width: 400px;
+    height: 570px;
+    padding: 20px 30px;
+}
+.h3
+{
+    font-size: medium;
+}
+.Défilement
+{
+    width: 400px;
+}
+
+.result
+{
+  width: 400px;
+  height: 570px;
+  padding: 20px 30px;
+}
+  .result > img 
+  {
+    width: 250px;
+  }
+    
+}
