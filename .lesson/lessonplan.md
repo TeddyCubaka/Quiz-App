@@ -22,6 +22,6 @@ def hello_world():
 
   For example, here is the Replit logo:
 
-  ![alt text](assets/logo.png)
+  ![alt radio](assets/logo.png)
   
   
