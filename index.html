@@ -4,8 +4,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>replit</title>
+  <link rel="shortcut icon" type="image/png" href="index.png">
+  <title>Test at KDA</title>
   <link href="style.css" rel="stylesheet" type="text/css"/>
+  <link rel="stylesheet" type="text/css" href="media.css"/>
 </head>
 <body>
 
@@ -15,20 +17,20 @@
 
 
     <header class="" id="header">
-      <h3>JavaSCript Quiz</h3>
+      <h1>JavaSCript Quiz</h1>
       <p>Évaluez vos connaissances en JavaScript en répondant aux questions que nous avons spécialement sélectionnées pour vous.
 C'est fun et c'est gratuit. </p>
       <div>
         <label for="name">Name</label><br>
-        <input type="text" name="name" id="name" required>
+        <input type="text" name="name" id="name" minlength="4" required placeholder="Name">
         <sub class="red subName hide">veuillez renseigner votre nom</sub>
       </div>
       <div>
         <label for="email">Gmail</label><br>
-        <input type="email" name="email" id="email" required>
+        <input type="email" name="email" id="email" required placeholder="mail@gmail.com">
         <sub class="red subMail hide">veuillez renseigner votre email</sub>
       </div>
-      <input type="button" name="begginBtn" id="begginBtn" class="button" value="Begin">
+      <input type="button" name="begginBtn" id="begginBtn" class="button" value="Commencer">
     </header>
     
     
@@ -68,7 +70,6 @@ C'est fun et c'est gratuit. </p>
       </div>
     </div>
     
-    <button id="click">click</button>
     
   </form>
     <!-- ces codes qui suivent concernent la page des résultats -->
@@ -78,15 +79,15 @@ C'est fun et c'est gratuit. </p>
     <div class="result hide">
       <div class="underDivResult" id="userName">userName</div>
       <div id="gmail" class="underDivResult">@mail.com</div>
-      <img src="cocheVert.png" alt="conche vert, cela veut dire que vous aviez réussit" class="underDivResult" id="iconCosh">
+      <img src="cocheVerte.png" alt="conche vert, cela veut dire que vous aviez réussit" class="underDivResult" id="iconCosh">
       <div class="underDivResult" id="points">15/15</div>
       <button class="underDivResult button" id="home">Home</button>
     </div>
     
     
     <script src="script.js"></script>
-    <!-- <script src="exit.js"></script>
-    <script src="test.js"></script> -->
+    <script src="exit.js"></script>
+    <!-- <script src="test.js"></script> -->
   </body>
 
   </html>

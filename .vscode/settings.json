@@ -1,0 +1,7 @@
+{
+    "editor.cursorStyle": "underline",
+    "editor.cursorBlinking": "smooth",
+    "editor.hideCursorInOverviewRuler": true,
+    "editor.minimap.showSlider": "always",
+    "editor.multiCursorMergeOverlapping": false
+}

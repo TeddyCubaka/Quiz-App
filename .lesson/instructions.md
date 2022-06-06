@@ -1,7 +1,7 @@
 # Quiz App
 Créer une application web qui permet aux développeurs JavaScript d'évaluer leur niveau.
 
-## Contexte du projet
+## Conradioe du projet
 Kinshasa Digital Academy (KDA) est le premier centre de formation d'excellence aux métiers du numérique basé à Kinshasa et à Goma.
 
 Chaque année KDA propose des formations en développement web et en marketing digital.

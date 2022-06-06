@@ -13,7 +13,7 @@ body {
 @keyframes progres-barre{
   0%{
     width: 100%;
-    background-color: skyblue;
+    background-color: #009a40;
   }
   10%{
     width: 90%;
@@ -36,7 +36,6 @@ body {
   60%
   {
     width: 40%;
-    background-color: violet;
   }
   70%
   {
@@ -52,7 +51,7 @@ body {
   }
   100%{
     width: 0%;
-    background-color: red;
+    background-color: #009a40;
   }
 }
 @keyframes transition {
@@ -98,6 +97,12 @@ header > *
 {
   margin: 0px 60px;
 }
+header > p
+{
+  font-size: 1.1em;
+  font-weight: 500;
+  line-height: 2rem;
+}
 header > div
 {
   font-size: large;
@@ -109,12 +114,14 @@ header > div > input
   height: 30px;
   margin: 10px 0px;
   border: 0.5px solid rgba(0, 100, 100, 10%);
+  font-size: large;
+  color: rgba(0, 0, 0, 0.9);
 }
 .button
 {
   width: 200px;
   height: 59px;
-  background-color: green;
+  background-color: #009a40;
   font-family: inter;
   border: none;
   color: white;
@@ -133,7 +140,7 @@ header > div > input
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  animation :transition2 2s;
+  animation :transition2 0.5s;
 }
 form > div
 {
@@ -141,22 +148,24 @@ form > div
   height: 540px;
   background-color: white;
   margin: auto;
-  /* margin-top:39px ; */
   text-align: center;
   padding: 50px 30px;
   display: none;
 }
 .Défilement {
   display: block;
-  border: 1px solid skyblue;
+  border: 0px solid skyblue;
+  background-color: rgba(0, 0, 0, 0.1);
   width: 490px;
-  height: 8px;
-  border-radius: 4px;
+  height: 10px;
+  border-radius: 30px;
   margin: 10px auto;
 }
 .barre
 {
-  height: 8px;
+  height: 10px;
+  border-radius: 30px;
+  width: 10%;
   animation: progres-barre 62s;
 }
 .checkBox{
@@ -168,9 +177,29 @@ form > div
   padding: 1em;
   font-size: large;
 }
+
+/* ce code va gérer les boutons radios. Disons l'appparence. */
+
+input[type='radio'] {
+  box-sizing: border-box;
+  appearance: none;
+  background: white;
+  outline: 2px solid skyblue;
+  border: 3px solid white;
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+}
+
+input[type='radio']:checked {
+  background: #009a40;
+  outline: 2px solid #009a40;
+  border: 6px solid #009a40;
+}
+
+
 .checkBox > input{
-  /* width: 30px; */
-  height: 20px;
+  height: 15px;
 }
 .red_button{
   background-color: orange;
@@ -179,6 +208,10 @@ form > div
 {
   display: flex;
   justify-content: space-between;
+}
+h3
+{
+  font-weight: 500;
 }
 
 
@@ -201,7 +234,7 @@ form > div
   align-items: center;
   justify-content: space-between;
   padding: 50px 20px;
-  animation: transition 2s;
+  animation: transition 0.5s;
 }
 
 .result > *{
@@ -211,9 +244,6 @@ form > div
 .result > img{
   width: 300px;
 }
-/* .result > button{
-
-} */
 
 
 
